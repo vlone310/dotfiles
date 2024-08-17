@@ -14,7 +14,7 @@ brew install tmux
 
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source ~/.tmux.conf
+tmux source ~/.config/tmux/.tmux.conf
 prefix + I
 ```
 
@@ -22,4 +22,40 @@ prefix + I
 
 ```bash
 brew install neovim
+```
+
+### Install eza (better ls)
+
+```bash
+brew install eza
+```
+
+### Install zoxide (better cd)
+
+```bash
+brew install zoxide
+```
+
+### Install lazygit
+
+```bash
+brew install lazygit
+```
+
+### Install powerlevel10k
+
+```bash
+brew install powerlevel10k
+```
+
+### Install zsh-autosuggestions
+
+```bash
+brew install zsh-autosuggestions
+```
+
+### Install zsh-syntax-highlighting
+
+```bash
+brew install zsh-syntax-highlighting
 ```
