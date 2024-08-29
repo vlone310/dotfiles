@@ -48,6 +48,27 @@ return {
       },
     })
 
+    vim.schedule(function()
+      vim.cmd([[
+      :hi NvimTreeGitDirty guifg=#e5c07b
+      :hi NvimTreeGitStaged guifg=#98c379
+      :hi NvimTreeGitMerge guifg=#e06c75
+      :hi NvimTreeGitRenamed guifg=#61afef
+      :hi NvimTreeGitNew guifg=#d19a66
+      :hi NvimTreeGitDeleted guifg=#be5046
+      :hi NvimTreeGitIgnored guifg=#7f848e
+    ]])
+    end)
+    -- Set custom Git highlight colors after the plugin is loaded
+    -- vim.schedule(function()
+    --   vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = "#e5c07b" }) -- VSCode yellow for modified files
+    --   vim.api.nvim_set_hl(0, "NvimTreeGitStaged", { fg = "#98c379" }) -- VSCode green for staged files
+    --   vim.api.nvim_set_hl(0, "NvimTreeGitMerge", { fg = "#e06c75" }) -- VSCode red for conflicts
+    --   vim.api.nvim_set_hl(0, "NvimTreeGitRenamed", { fg = "#61afef" }) -- VSCode blue for renamed files
+    --   vim.api.nvim_set_hl(0, "NvimTreeGitNew", { fg = "#d19a66" }) -- VSCode orange for new files
+    --   vim.api.nvim_set_hl(0, "NvimTreeGitDeleted", { fg = "#be5046" }) -- VSCode dark red for deleted files
+    --   vim.api.nvim_set_hl(0, "NvimTreeGitIgnored", { fg = "#7f848e" }) -- VSCode gray for ignored files
+    -- end)
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
