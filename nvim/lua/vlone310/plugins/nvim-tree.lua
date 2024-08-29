@@ -47,9 +47,10 @@ return {
         timeout = 500,
       },
     })
-
-    vim.schedule(function()
-      vim.cmd([[
+    vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function()
+        vim.schedule(function()
+          vim.cmd([[
       :hi NvimTreeGitDirty guifg=#e5c07b
       :hi NvimTreeGitStaged guifg=#98c379
       :hi NvimTreeGitMerge guifg=#e06c75
@@ -58,7 +59,9 @@ return {
       :hi NvimTreeGitDeleted guifg=#be5046
       :hi NvimTreeGitIgnored guifg=#7f848e
     ]])
-    end)
+        end)
+      end,
+    })
     -- Set custom Git highlight colors after the plugin is loaded
     -- vim.schedule(function()
     --   vim.api.nvim_set_hl(0, "NvimTreeGitDirty", { fg = "#e5c07b" }) -- VSCode yellow for modified files
