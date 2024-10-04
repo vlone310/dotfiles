@@ -23,6 +23,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Go path
 export PATH=$PATH:$GOPATH/bin
 
+# RTS k8s
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export KUBECONFIG=~/kubeconfig-rts
+
 # Powerlevel10k theme
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
