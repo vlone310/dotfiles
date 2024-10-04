@@ -24,6 +24,12 @@ prefix + I
 brew install neovim
 ```
 
+### Telescope live grep
+
+```bash
+brew install ripgrep
+```
+
 ### Install eza (better ls)
 
 ```bash

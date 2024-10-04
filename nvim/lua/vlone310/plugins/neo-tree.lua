@@ -56,7 +56,7 @@ return {
         follow_current_file = {
           enabled = true,
         }, -- This will find and focus the current file
-        group_empty_dirs = true, -- Empty directories will be grouped together
+        group_empty_dirs = false, -- Empty directories will be grouped together
         hijack_netrw_behavior = "open_current", -- Hijack netrw window for opening Neo-tree
         use_libuv_file_watcher = true, -- Watch for changes to files
       },
