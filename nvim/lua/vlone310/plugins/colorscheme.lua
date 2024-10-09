@@ -81,4 +81,26 @@ return {
       end,
     })
   end,
+  ---------------------------------------Nordic Theme Setup--------------------------------------------------
+  -- "AlexvZyl/nordic.nvim",
+  -- lazy = false,
+  -- priority = 1000,
+  -- config = function()
+  --   require("nordic").load({
+  --     telescope = {
+  --       -- Available styles: `classic`, `flat`.
+  --       style = "classic",
+  --     },
+  --     ts_context = {
+  --       -- Enables dark background for treesitter-context window
+  --       dark_background = false,
+  --     },
+  --     transparent = {
+  --       -- Enable transparent background.
+  --       bg = false,
+  --       -- Enable transparent background for floating windows.
+  --       float = true,
+  --     },
+  --   })
+  -- end,
 }
