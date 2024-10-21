@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "vlone310.plugins" },
   { import = "vlone310.plugins.lsp" },
-  { import = "vlone310.plugins.colorscheme.catpuccin" },
+  { import = "vlone310.plugins.colorscheme.nordic" },
 }, {
   checker = {
     enabled = true,

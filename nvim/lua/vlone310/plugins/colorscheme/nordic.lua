@@ -3,23 +3,29 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    local borderColor = "E7C173"
-
     require("nordic").load({
       telescope = {
-        -- Available styles: `classic`, `flat`.
-        style = "classic",
+        style = "flat",
       },
       ts_context = {
-        -- Enables dark background for treesitter-context window
         dark_background = true,
       },
       transparent = {
-        -- Enable transparent background.
-        bg = true,
-        -- Enable transparent background for floating windows.
-        float = true,
+        bg = false,
+        float = false,
       },
+
+      after_palette = function(palette)
+        palette.bg = palette.black2
+      end,
+      on_highlight = function(highlights, palette)
+        highlights.NeoTreeGitAdded = { fg = palette.green.dim }
+        highlights.NeoTreeGitModified = { fg = palette.yellow.bright }
+        highlights.NeoTreeGitDeleted = { fg = palette.red.bright }
+        highlights.NeoTreeGitConflict = { fg = palette.orange.bright }
+        highlights.NeoTreeGitUntracked = { fg = palette.green.bright }
+        highlights.FloatBorder = { fg = palette.yellow.base }
+      end,
     })
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -31,12 +37,5 @@ return {
     })
 
     vim.cmd.colorscheme("nordic")
-
-    vim.api.nvim_create_autocmd("ColorScheme", {
-      pattern = "*",
-      callback = function()
-        vim.api.nvim_set_hl(0, "FloatBorder", { fg = borderColor }) -- Example: gold border color
-      end,
-    })
   end,
 }
