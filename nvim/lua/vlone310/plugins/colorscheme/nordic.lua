@@ -25,6 +25,10 @@ return {
         highlights.NeoTreeGitConflict = { fg = palette.orange.bright }
         highlights.NeoTreeGitUntracked = { fg = palette.green.bright }
         highlights.FloatBorder = { fg = palette.yellow.base }
+        highlights.TelescopeBorder = { fg = palette.yellow.base, bg = palette.black3 }
+        highlights.TelescopePromptBorder = { fg = palette.yellow.base, bg = palette.black3 }
+        highlights.TelescopeResultsBorder = { fg = palette.yellow.base, bg = palette.black3 }
+        highlights.TelescopePreviewBorder = { fg = palette.yellow.base, bg = palette.black3 }
       end,
     })
 
