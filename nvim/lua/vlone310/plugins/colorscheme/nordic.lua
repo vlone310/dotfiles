@@ -14,9 +14,16 @@ return {
         bg = false,
         float = false,
       },
-
-      after_palette = function(palette)
-        palette.bg = palette.black2
+      on_palette = function(palette)
+        palette.black0 = "#14181F"
+        palette.black1 = "#191D24"
+        palette.black2 = "#1E222A"
+        palette.gray0 = "#222630"
+        palette.gray1 = "#242933"
+        palette.gray2 = "#2E3440"
+        palette.gray3 = "#3B4252"
+        palette.gray4 = "#434C5E"
+        palette.gray5 = "#4C566A"
       end,
       on_highlight = function(highlights, palette)
         highlights.NeoTreeGitAdded = { fg = palette.green.dim }
@@ -25,10 +32,10 @@ return {
         highlights.NeoTreeGitConflict = { fg = palette.orange.bright }
         highlights.NeoTreeGitUntracked = { fg = palette.green.bright }
         highlights.FloatBorder = { fg = palette.yellow.base }
-        highlights.TelescopeBorder = { fg = palette.yellow.base, bg = palette.black3 }
-        highlights.TelescopePromptBorder = { fg = palette.yellow.base, bg = palette.black3 }
-        highlights.TelescopeResultsBorder = { fg = palette.yellow.base, bg = palette.black3 }
-        highlights.TelescopePreviewBorder = { fg = palette.yellow.base, bg = palette.black3 }
+        highlights.TelescopeBorder = { fg = palette.yellow.base }
+        highlights.TelescopePromptBorder = { fg = palette.yellow.base }
+        highlights.TelescopeResultsBorder = { fg = palette.yellow.base }
+        highlights.TelescopePreviewBorder = { fg = palette.yellow.base }
       end,
     })
 
