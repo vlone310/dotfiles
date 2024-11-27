@@ -55,3 +55,4 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 
 alias cd="z"
+. "/Users/arehovskiy/.deno/env"
