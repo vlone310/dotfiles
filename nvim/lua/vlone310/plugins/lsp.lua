@@ -4,11 +4,11 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim",                   opts = {} },
+    { "folke/neodev.nvim", opts = {} },
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    "towolf/vim-helm"
+    "towolf/vim-helm",
   },
   config = function()
     -- Import plugins
@@ -49,10 +49,8 @@ return {
           yaml = {
             schemas = {
               ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-              ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] =
-              "/*.k8s.yaml",
-              ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] =
-              "/*.gitlab-ci.yml",
+              ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+              ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] = "/*.gitlab-ci.yml",
             },
             customTags = {
               "!reference sequence",
@@ -63,7 +61,7 @@ return {
               "!Base64",
               "!Vault",
               "!helm",
-              "{{.*}}"
+              "{{.*}}",
             },
           },
         },
@@ -84,6 +82,7 @@ return {
     -- Mason-lspconfig setup
     mason_lspconfig.setup({
       ensure_installed = vim.tbl_keys(servers),
+      automatic_installation = true,
     })
 
     -- Mason-tool-installer setup
@@ -96,9 +95,9 @@ return {
         "pylint",
         "eslint_d",
         "gopls",
+        "golangci-lint",
       },
     })
-
 
     -- Autocompletion capabilities
     local capabilities = cmp_nvim_lsp.default_capabilities()

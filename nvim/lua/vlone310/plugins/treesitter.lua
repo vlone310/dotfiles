@@ -47,6 +47,8 @@ return {
         "vimdoc",
         "nginx",
         "sql",
+        "helm",
+        "zig",
       },
       incremental_selection = {
         enable = true,
