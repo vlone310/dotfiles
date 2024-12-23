@@ -9,12 +9,15 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "towolf/vim-helm",
+    -- Mason DAP integration
+    "jay-babu/mason-nvim-dap.nvim",
   },
   config = function()
     -- Import plugins
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
+    local mason_dap = require("mason-nvim-dap")
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local keymap = vim.keymap -- for conciseness
@@ -97,6 +100,11 @@ return {
         "gopls",
         "golangci-lint",
       },
+    })
+
+    mason_dap.setup({
+      ensure_installed = { "delve" },
+      automatic_installation = true,
     })
 
     -- Autocompletion capabilities
