@@ -4,8 +4,9 @@ return {
     local auto_session = require("auto-session")
 
     auto_session.setup({
-      auto_restore_enabled = false,
       auto_session_suppress_dirs = { "~/", "~/Downloads/", "~/Documents/", "~/Desktop/" },
+      pre_save_cmds = { "Neotree close" },
+      post_restore_cmds = { "Neotree filesystem show" },
     })
 
     local keymap = vim.keymap
