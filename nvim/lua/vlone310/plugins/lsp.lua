@@ -69,6 +69,8 @@ return {
           },
         },
       },
+      eslint = {},
+      ["golangci-lint-ls"] = {},
     }
 
     -- Mason setup
