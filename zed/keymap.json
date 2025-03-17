@@ -1,0 +1,93 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-c": "pane::CloseActiveItem",
+
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && vim_operator == none && !VimWaiting",
+    "bindings": {
+      // pane
+      "ctrl-,": "pane::ActivatePreviousItem",
+      "ctrl-.": "pane::ActivateNextItem",
+
+      // file_finder
+      "space f f": "file_finder::Toggle",
+      "space f s": "workspace::NewSearch",
+      "space f c": "editor::FindAllReferences",
+
+      // TODO: Tree
+      "space e e": "workspace::ToggleLeftDock",
+      "space e g": "git_panel::ToggleFocus",
+      "space e t": "project_panel::ToggleFocus",
+
+      // LSP
+      "space c a": "editor::ToggleCodeActions",
+      "g d": "editor::GoToDefinition",
+      "g t": "editor::GoToTypeDefinition",
+      "space d": "editor::ToggleInlineDiagnostics",
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] d": "editor::GoToDiagnostic",
+      "K": "editor::Hover",
+      "space r s": "context_servers::Restart",
+
+      // TODO: Debugging
+
+      // Terminal
+      "space t t": "terminal_panel::ToggleFocus",
+
+      // git
+      "space h B": "editor::ToggleGitBlameInline",
+      "space h b": "git::Blame",
+      "[ h": "editor::GoToPreviousHunk",
+      "] h": "editor::GoToHunk",
+      "space h d": "editor::ToggleSelectedDiffHunks",
+      "space h r": "git::Restore",
+      "space l g": ["task::Spawn", { "task_name": "start lazygit" }],
+
+      // Markdown
+      "space m d": "markdown::OpenPreviewToTheSide"
+    }
+  },
+  {
+    "context": "Workspace && vim_operator == none && !VimWaiting",
+    "bindings": {}
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w ctrl-k": "workspace::ActivateNextPane"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "ctrl-w ctrl-l": "workspace::ActivateNextPane",
+      "ctrl-n": "project_panel::NewFile",
+      "ctrl-d": "project_panel::Delete",
+      "ctrl-r": "project_panel::Rename",
+      "ctrl-c": "project_panel::Copy",
+      "ctrl-x": "project_panel::Cut",
+      "ctrl-p": "project_panel::Paste"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious"
+    }
+  }
+]

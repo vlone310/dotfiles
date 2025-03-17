@@ -70,7 +70,7 @@ return {
         },
       },
       eslint = {},
-      ["golangci-lint-ls"] = {},
+      -- ["golangci-lint-langserver"] = {},
     }
 
     -- Mason setup
