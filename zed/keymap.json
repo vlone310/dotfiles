@@ -8,12 +8,23 @@
 [
   {
     "bindings": {
-      "ctrl-c": "pane::CloseActiveItem",
-
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
       "ctrl-k": "workspace::ActivatePaneUp",
       "ctrl-j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "!Terminal",
+    "bindings": {
+      "ctrl-c": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-,": "pane::ActivatePreviousItem",
+      "ctrl-.": "pane::ActivateNextItem"
     }
   },
   {
@@ -25,6 +36,7 @@
 
       // file_finder
       "space f f": "file_finder::Toggle",
+      "space f m": "file_finder::ToggleMenu",
       "space f s": "workspace::NewSearch",
       "space f c": "editor::FindAllReferences",
 
@@ -46,7 +58,7 @@
       // TODO: Debugging
 
       // Terminal
-      "space t t": "terminal_panel::ToggleFocus",
+      "space t t": "workspace::NewCenterTerminal",
 
       // git
       "space h B": "editor::ToggleGitBlameInline",
@@ -72,15 +84,24 @@
     }
   },
   {
-    "context": "ProjectPanel",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "ctrl-w ctrl-l": "workspace::ActivateNextPane",
-      "ctrl-n": "project_panel::NewFile",
-      "ctrl-d": "project_panel::Delete",
-      "ctrl-r": "project_panel::Rename",
-      "ctrl-c": "project_panel::Copy",
-      "ctrl-x": "project_panel::Cut",
-      "ctrl-p": "project_panel::Paste"
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      "o": "menu::Confirm",
+      "r": "project_panel::Rename",
+      "z c": "project_panel::CollapseSelectedEntry",
+      "z o": "project_panel::ExpandSelectedEntry",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "shift-y": "workspace::CopyRelativePath",
+      "g y": "workspace::CopyPath"
     }
   },
   {
@@ -88,6 +109,13 @@
     "bindings": {
       "ctrl-j": "editor::ContextMenuNext",
       "ctrl-k": "editor::ContextMenuPrevious"
+    }
+  },
+  {
+    "context": "FileFinder",
+    "bindings": {
+      "J": "menu::SelectNext",
+      "K": "menu::SelectPrevious"
     }
   }
 ]
